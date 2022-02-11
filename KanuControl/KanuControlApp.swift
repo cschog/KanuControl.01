@@ -11,7 +11,7 @@ import SwiftUI
 struct KanuControlApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartMenueView()
         }
     }
 }

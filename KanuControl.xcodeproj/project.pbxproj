@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83103F8D27B434FB008EF482 /* VereineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83103F8C27B434FB008EF482 /* VereineView.swift */; };
 		83FA542A27B42F6E00B9AF25 /* KanuControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA542927B42F6E00B9AF25 /* KanuControlApp.swift */; };
-		83FA542C27B42F6E00B9AF25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA542B27B42F6E00B9AF25 /* ContentView.swift */; };
+		83FA542C27B42F6E00B9AF25 /* StartMenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA542B27B42F6E00B9AF25 /* StartMenueView.swift */; };
 		83FA542E27B42F6E00B9AF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83FA542D27B42F6E00B9AF25 /* Assets.xcassets */; };
 		83FA543127B42F6E00B9AF25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83FA543027B42F6E00B9AF25 /* Preview Assets.xcassets */; };
+		83FA543927B4308C00B9AF25 /* MitgliederView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA543827B4308C00B9AF25 /* MitgliederView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83103F8C27B434FB008EF482 /* VereineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VereineView.swift; sourceTree = "<group>"; };
 		83FA542627B42F6E00B9AF25 /* KanuControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanuControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83FA542927B42F6E00B9AF25 /* KanuControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanuControlApp.swift; sourceTree = "<group>"; };
-		83FA542B27B42F6E00B9AF25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		83FA542B27B42F6E00B9AF25 /* StartMenueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenueView.swift; sourceTree = "<group>"; };
 		83FA542D27B42F6E00B9AF25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83FA543027B42F6E00B9AF25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		83FA543827B4308C00B9AF25 /* MitgliederView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MitgliederView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				83FA542927B42F6E00B9AF25 /* KanuControlApp.swift */,
-				83FA542B27B42F6E00B9AF25 /* ContentView.swift */,
+				83FA543727B42FA500B9AF25 /* Views */,
 				83FA542D27B42F6E00B9AF25 /* Assets.xcassets */,
 				83FA542F27B42F6E00B9AF25 /* Preview Content */,
 			);
@@ -65,6 +69,16 @@
 				83FA543027B42F6E00B9AF25 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		83FA543727B42FA500B9AF25 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				83FA542B27B42F6E00B9AF25 /* StartMenueView.swift */,
+				83FA543827B4308C00B9AF25 /* MitgliederView.swift */,
+				83103F8C27B434FB008EF482 /* VereineView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83FA542C27B42F6E00B9AF25 /* ContentView.swift in Sources */,
+				83FA542C27B42F6E00B9AF25 /* StartMenueView.swift in Sources */,
+				83103F8D27B434FB008EF482 /* VereineView.swift in Sources */,
 				83FA542A27B42F6E00B9AF25 /* KanuControlApp.swift in Sources */,
+				83FA543927B4308C00B9AF25 /* MitgliederView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
