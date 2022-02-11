@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct MitgliederView: View {
+    
+    @ObservedObject var kanuControlBrain = KanuControlBrain()
+    
     var body: some View {
-        List {
-            NavigationLink("Member 1", destination: Text("Member 1 Detail View"))
+        List (kanuControlBrain.personen){ person in
+            NavigationLink(destination: MitgliederDetailView(name: person.name, vorname: person.vorname)) {
+                HStack {
+                    // Text(String(person.id))
+                    Text(person.nameGesamt)
+                }
+            }
         }
-        .navigationBarTitle("Member")
+        .navigationBarTitle("Mitglieder")
     }
 }
 
