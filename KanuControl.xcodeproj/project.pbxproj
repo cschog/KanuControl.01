@@ -11,6 +11,10 @@
 		8330201027B6D8E600E5DE8A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8330200F27B6D8E600E5DE8A /* Person.swift */; };
 		8330201227B6DB5A00E5DE8A /* KanuControlBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8330201127B6DB5A00E5DE8A /* KanuControlBrain.swift */; };
 		8330201627B6E5B800E5DE8A /* MitgliederDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8330201527B6E5B800E5DE8A /* MitgliederDetailView.swift */; };
+		83DAA15427C4EA9900AB8524 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 83DAA15327C4EA9900AB8524 /* GRDB */; };
+		83DAA15727C4EB8000AB8524 /* GRDBQuery in Frameworks */ = {isa = PBXBuildFile; productRef = 83DAA15627C4EB8000AB8524 /* GRDBQuery */; };
+		83DAA15927C4FB6F00AB8524 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DAA15827C4FB6F00AB8524 /* DataBaseManager.swift */; };
+		83DAA15B27C501BE00AB8524 /* Verein.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DAA15A27C501BE00AB8524 /* Verein.swift */; };
 		83FA542A27B42F6E00B9AF25 /* KanuControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA542927B42F6E00B9AF25 /* KanuControlApp.swift */; };
 		83FA542C27B42F6E00B9AF25 /* StartMenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA542B27B42F6E00B9AF25 /* StartMenueView.swift */; };
 		83FA542E27B42F6E00B9AF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83FA542D27B42F6E00B9AF25 /* Assets.xcassets */; };
@@ -23,6 +27,8 @@
 		8330200F27B6D8E600E5DE8A /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		8330201127B6DB5A00E5DE8A /* KanuControlBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanuControlBrain.swift; sourceTree = "<group>"; };
 		8330201527B6E5B800E5DE8A /* MitgliederDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MitgliederDetailView.swift; sourceTree = "<group>"; };
+		83DAA15827C4FB6F00AB8524 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		83DAA15A27C501BE00AB8524 /* Verein.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verein.swift; sourceTree = "<group>"; };
 		83FA542627B42F6E00B9AF25 /* KanuControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanuControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83FA542927B42F6E00B9AF25 /* KanuControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanuControlApp.swift; sourceTree = "<group>"; };
 		83FA542B27B42F6E00B9AF25 /* StartMenueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartMenueView.swift; sourceTree = "<group>"; };
@@ -36,6 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83DAA15727C4EB8000AB8524 /* GRDBQuery in Frameworks */,
+				83DAA15427C4EA9900AB8524 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +53,10 @@
 		8330200E27B6D8C800E5DE8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8330200F27B6D8E600E5DE8A /* Person.swift */,
 				8330201127B6DB5A00E5DE8A /* KanuControlBrain.swift */,
+				83DAA15827C4FB6F00AB8524 /* DataBaseManager.swift */,
+				83DAA15A27C501BE00AB8524 /* Verein.swift */,
+				8330200F27B6D8E600E5DE8A /* Person.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -70,8 +80,8 @@
 		83FA542827B42F6E00B9AF25 /* KanuControl */ = {
 			isa = PBXGroup;
 			children = (
-				8330200E27B6D8C800E5DE8A /* Model */,
 				83FA542927B42F6E00B9AF25 /* KanuControlApp.swift */,
+				8330200E27B6D8C800E5DE8A /* Model */,
 				83FA543727B42FA500B9AF25 /* Views */,
 				83FA542D27B42F6E00B9AF25 /* Assets.xcassets */,
 				83FA542F27B42F6E00B9AF25 /* Preview Content */,
@@ -114,6 +124,10 @@
 			dependencies = (
 			);
 			name = KanuControl;
+			packageProductDependencies = (
+				83DAA15327C4EA9900AB8524 /* GRDB */,
+				83DAA15627C4EB8000AB8524 /* GRDBQuery */,
+			);
 			productName = KanuControl;
 			productReference = 83FA542627B42F6E00B9AF25 /* KanuControl.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +156,10 @@
 				Base,
 			);
 			mainGroup = 83FA541D27B42F6E00B9AF25;
+			packageReferences = (
+				83DAA15227C4EA9900AB8524 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+				83DAA15527C4EB8000AB8524 /* XCRemoteSwiftPackageReference "GRDBQuery" */,
+			);
 			productRefGroup = 83FA542727B42F6E00B9AF25 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -168,6 +186,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83DAA15927C4FB6F00AB8524 /* DataBaseManager.swift in Sources */,
+				83DAA15B27C501BE00AB8524 /* Verein.swift in Sources */,
 				8330201027B6D8E600E5DE8A /* Person.swift in Sources */,
 				8330201627B6E5B800E5DE8A /* MitgliederDetailView.swift in Sources */,
 				83FA542C27B42F6E00B9AF25 /* StartMenueView.swift in Sources */,
@@ -377,6 +397,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		83DAA15227C4EA9900AB8524 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		83DAA15527C4EB8000AB8524 /* XCRemoteSwiftPackageReference "GRDBQuery" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDBQuery.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		83DAA15327C4EA9900AB8524 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83DAA15227C4EA9900AB8524 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+		83DAA15627C4EB8000AB8524 /* GRDBQuery */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83DAA15527C4EB8000AB8524 /* XCRemoteSwiftPackageReference "GRDBQuery" */;
+			productName = GRDBQuery;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83FA541E27B42F6E00B9AF25 /* Project object */;
 }
