@@ -7,25 +7,25 @@
 
 import SwiftUI
 
-struct MitgliederView: View {
+struct MemberView: View {
     
     @ObservedObject var kanuControlBrain = KanuControlBrain()
     
     /// We'll need to leave edit mode in several occasions.
     @State private var editMode = EditMode.inactive
     
-    /// Tracks the presentation of the player creation sheet.
+    /// Tracks the presentation of the member creation sheet.
     @State private var neuesMitgliedIsPresented = false
     
     var body: some View {
         List (kanuControlBrain.personen){ person in
-            NavigationLink(destination: MitgliederDetailView(name: person.name, vorname: person.vorname ?? "")) {
+            NavigationLink(destination: MemberDetailView(name: person.name, vorname: person.vorname ?? "")) {
                     if let vorname = person.vorname {
                         Text("\(person.name), \(vorname)")
                 }
             }
         }
-        .navigationBarTitle(Text("\(kanuControlBrain.personen.count) Mitglieder"))
+        .navigationBarTitle(Text("\(kanuControlBrain.personen.count) Member"))
         .navigationBarItems(
             trailing: HStack {
                 EditButton()
@@ -34,7 +34,7 @@ struct MitgliederView: View {
 
     }
     
-    // The button that presents the player creation sheet.
+    // The button that presents the member creation sheet.
     private var neuesMitgliedButton: some View {
         Button {
             stopEditing()
@@ -57,6 +57,6 @@ struct MitgliederView: View {
 
 struct MitgliederView_Previews: PreviewProvider {
     static var previews: some View {
-        MitgliederView()
+        MemberView()
     }
 }

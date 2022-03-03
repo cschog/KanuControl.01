@@ -14,8 +14,8 @@ struct StartMenueView: View {
         NavigationView {
             ZStack {
                 Color(red: 0.20, green: 0.60, blue: 0.86, opacity: 0.70).edgesIgnoringSafeArea(.all)
-                NavigationLink(destination: MitgliederView(), tag: "A", selection: $selection) { EmptyView() }
-                NavigationLink(destination: VereineView(), tag: "B", selection: $selection) { EmptyView() }
+                NavigationLink(destination: MemberView(), tag: "A", selection: $selection) { EmptyView() }
+                NavigationLink(destination: ClubsView(), tag: "B", selection: $selection) { EmptyView() }
                 VStack {
                     Image("logoKanuControl")
                         .resizable()
@@ -25,7 +25,7 @@ struct StartMenueView: View {
                     
                     HStack {
                         Spacer()
-                        Button("Mitglieder") {
+                        Button("Member") {
                             selection = "A"
                         }
                         .frame(
@@ -39,7 +39,7 @@ struct StartMenueView: View {
                         .background(RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius).fill(Color.white))
                         Spacer()
                         
-                        Button("Vereine") {
+                        Button("Clubs") {
                             selection = "B"
                         } .frame(
                             width: DrawingConstants.frameWidth,

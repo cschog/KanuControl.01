@@ -35,17 +35,17 @@ class DatabaseManager {
 #endif
         
         migrator.registerMigration("createKC") { db in
-            try db.create(table: "Verein") { t in
+            try db.create(table: "Club") { t in
                 t.autoIncrementedPrimaryKey("id")
                 t.column("name", .text).notNull()
-                t.column("kurz", .text)
+                t.column("shortcut", .text)
             }
-            try db.create(table: "Person") { t in
+            try db.create(table: "Member") { t in
                 t.autoIncrementedPrimaryKey("id")
                 t.column("name", .text).notNull()
-                t.column("vorname", .text)
-                t.column("vereinId", .integer)  // einfaches Datenmodell (jede Person kann nur in einem Verein Mitglied sein
-                    .references("verein")
+                t.column("firstName", .text)
+                t.column("clubId", .integer)  // einfaches Datenmodell (jede Person kann nur in einem Verein Mitglied sein
+                    .references("club")
                     .indexed()
             }
         }

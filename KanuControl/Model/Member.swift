@@ -8,7 +8,7 @@
 import Foundation
 import GRDB
 
-struct Person: Identifiable {
+struct Member: Identifiable {
     // The person id.
 
     var id: Int64?
@@ -17,4 +17,4 @@ struct Person: Identifiable {
     var vereinID: Int64?
 }
 
-extension Person: Codable, FetchableRecord, MutablePersistableRecord { }
+extension Member: Codable, FetchableRecord, MutablePersistableRecord { }

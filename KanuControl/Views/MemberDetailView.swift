@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MitgliederDetailView: View {
+struct MemberDetailView: View {
 
     let name: String
     let vorname: String
@@ -15,13 +15,13 @@ struct MitgliederDetailView: View {
     var body: some View {
         List {
             Text("Name: \(name)")
-            Text("Vorname: \(vorname)")
+            Text("First Name: \(vorname)")
         }
     }
 }
 
 struct MitgliederDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MitgliederDetailView(name: "Schog", vorname: "Chris")
+        MemberDetailView(name: "Schog", vorname: "Chris")
     }
 }

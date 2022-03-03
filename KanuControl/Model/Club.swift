@@ -8,15 +8,15 @@
 import Foundation
 import GRDB
 
-struct Verein: Identifiable {
+struct Club: Identifiable {
     // The verein id.
     
     var id: Int64?
     var name: String
-    var kurz: String?
+    var shortcut: String?
 }
 
-extension Verein: Codable, FetchableRecord, MutablePersistableRecord {
+extension Club: Codable, FetchableRecord, MutablePersistableRecord {
     
     mutating func didInsert(with rowID: Int64, for column: String?) {
         id = rowID
@@ -24,17 +24,17 @@ extension Verein: Codable, FetchableRecord, MutablePersistableRecord {
     
 }
 
-extension Verein: TableRecord, EncodableRecord {
+extension Club: TableRecord, EncodableRecord {
 
-    static let mitglieder = hasMany(Person.self)
+    static let mitglieder = hasMany(Member.self)
 
     private enum Columns {
         static let id = Column(CodingKeys.id)
         static let name = Column(CodingKeys.name)
-        static let kurz = Column(CodingKeys.kurz) 
+        static let shortcut = Column(CodingKeys.shortcut) 
     }
 
-    var mitglieder: QueryInterfaceRequest<Person> {
-        return request(for: Verein.mitglieder)
+    var mitglieder: QueryInterfaceRequest<Member> {
+        return request(for: Club.mitglieder)
     }
 }
