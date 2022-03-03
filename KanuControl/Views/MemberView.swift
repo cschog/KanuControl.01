@@ -19,7 +19,7 @@ struct MemberView: View {
     
     var body: some View {
         List (kanuControlBrain.personen){ person in
-            NavigationLink(destination: MemberDetailView(name: person.name, vorname: person.vorname ?? "")) {
+            NavigationLink(destination: MemberEditionView(name: person.name, vorname: person.vorname ?? "")) {
                     if let vorname = person.vorname {
                         Text("\(person.name), \(vorname)")
                 }

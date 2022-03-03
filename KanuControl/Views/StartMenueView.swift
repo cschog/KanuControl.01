@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct StartMenueView: View {
+    /// Write access to the database
+    @Environment(\.appDatabase) private var appDatabase
+    
     @State private var selection: String? = nil
     
     var body: some View {
