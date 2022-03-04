@@ -1,27 +1,15 @@
 //
-//  ClubRequest.swift
+//  MemberRequest.swift
 //  KanuControl
 //
-//  Created by Christoph Schog on 03.03.22.
+//  Created by Christoph Schog on 04.03.22.
 //
 
 import Combine
 import GRDB
 import GRDBQuery
 
-/// A club request can be used with the `@Query` property wrapper in order to
-/// feed a view with a list of clubs.
-///
-/// For example:
-///
-///     struct MyView: View {
-///         @Query(ClubRequest(ordering: .byName)) private var clubs: [Club]
-///
-///         var body: some View {
-///             List(clubs) { club in ... )
-///         }
-///     }
-struct ClubRequest: Queryable {
+struct MemberRequest: Queryable {
     enum Ordering {
         case byName
     }
@@ -31,9 +19,9 @@ struct ClubRequest: Queryable {
     
     // MARK: - Queryable Implementation
     
-    static var defaultValue: [Club] { [] }
+    static var defaultValue: [Member] { [] }
     
-    func publisher(in appDatabase: AppDatabase) -> AnyPublisher<[Club], Error> {
+    func publisher(in appDatabase: AppDatabase) -> AnyPublisher<[Member], Error> {
         // Build the publisher from the general-purpose read-only access
         // granted by `appDatabase.databaseReader`.
         // Some apps will prefer to call a dedicated method of `appDatabase`.
@@ -49,11 +37,12 @@ struct ClubRequest: Queryable {
     }
     
     // This method is not required by Queryable, but it makes it easier
-    // to test ClubRequest.
-    func fetchValue(_ db: Database) throws -> [Club] {
+    // to test MemberRequest.
+    func fetchValue(_ db: Database) throws -> [Member] {
         switch ordering {
         case .byName:
-            return try Club.all().orderedByName().fetchAll(db)
+            return try Member.all().orderedByName().fetchAll(db)
         }
     }
 }
+

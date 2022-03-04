@@ -9,6 +9,7 @@ import SwiftUI
 
 /// The view that creates a new club.
 struct ClubCreationView: View {
+    
     /// Write access to the database
     @Environment(\.appDatabase) private var appDatabase
     @Environment(\.dismiss) private var dismiss

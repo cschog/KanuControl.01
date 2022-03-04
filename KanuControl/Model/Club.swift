@@ -9,7 +9,7 @@ import Foundation
 import GRDB
 
 struct Club: Identifiable, Equatable {
-    // The verein id.
+    // The club id.
     
     var id: Int64?
     var name: String

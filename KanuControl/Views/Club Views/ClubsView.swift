@@ -1,5 +1,5 @@
 //
-//  VereineView.swift
+//  ClubView.swift
 //  KanuControl
 //
 //  Created by Christoph Schog on 09.02.22.
@@ -36,6 +36,7 @@ struct ClubsView: View {
                 }
                 .environment(\.editMode, $editMode)
         }
+        .navigationViewStyle(.stack)
     }
     
     
@@ -63,6 +64,6 @@ struct ClubsView: View {
 
 //struct VereineView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ClubsList(clubs: Club)
+//        ClubsList()
 //    }
 //}

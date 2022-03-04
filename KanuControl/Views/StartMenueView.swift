@@ -58,6 +58,7 @@ struct StartMenueView: View {
                 .navigationTitle("KanuControl")
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

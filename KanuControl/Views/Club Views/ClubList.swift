@@ -11,9 +11,10 @@ struct ClubList: View {
     
     // Write access to the database
     @Environment(\.appDatabase) private var appDatabase
-
+    
     @State private var showingAlert = false
     @State private var deleteRow = false
+    @State private var clubsIds: [Int64] = [0]
     
     /// The clubs in the list
     var clubs: [Club]
@@ -23,14 +24,20 @@ struct ClubList: View {
             ForEach(clubs) { club in
                 NavigationLink(destination: editionView(for: club)) {
                     ClubRow(club: club)
-                        // Don't animate club update
+                    // Don't animate club update
                         .animation(nil, value: club)
                 }
             }
             .onDelete { offsets in
-                let clubsIds = offsets.compactMap { clubs[$0].id }
-                try? appDatabase.deleteClub(ids: clubsIds)
+                clubsIds = offsets.compactMap { clubs[$0].id }
+                showingAlert = true
             }
+            .alert("Wirklich löschen?", isPresented: $showingAlert) {
+                Button("OK", role: nil, action: {
+                    try! appDatabase.deleteClub(ids: clubsIds)
+                })
+                Button("Cancel", role: .cancel, action: {
+                })}
             
         }
         // Animate list updates

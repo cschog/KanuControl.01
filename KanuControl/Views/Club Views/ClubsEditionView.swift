@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// The view that edits an existing player.
+/// The view that edits an existing club.
 struct ClubsEditionView: View {
     /// Write access to the database
     @Environment(\.appDatabase) private var appDatabase
