@@ -14,6 +14,7 @@ struct MemberView: View {
     
     /// The `member` property is automatically updated when the database changes
     @Query(MemberRequest(ordering: .byName)) private var members: [Member]
+
     
     /// We'll need to leave edit mode in several occasions.
     @State private var editMode = EditMode.inactive
@@ -24,7 +25,7 @@ struct MemberView: View {
     var body: some View {
         NavigationView {
             MemberList(members: members)
-                .navigationBarTitle(Text("\(members.count) Member"))
+                .navigationBarTitle(Text("\(members.count) Member"), displayMode: .inline)
                 .navigationBarItems(
                     trailing: HStack {
                         EditButton()
@@ -61,8 +62,8 @@ struct MemberView: View {
     }
 }
 
-//struct MitgliederView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MemberView()
-//    }
-//}
+struct MitgliederView_Previews: PreviewProvider {
+    static var previews: some View {
+        MemberView()
+    }
+}

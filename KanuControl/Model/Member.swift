@@ -51,7 +51,7 @@ extension Member: TableRecord, EncodableRecord {
 
 // MARK: - Member Database Requests
 
-/// Define some meber requests used by the application.
+/// Define some member requests used by the application.
 ///
 /// See <https://github.com/groue/GRDB.swift/blob/master/README.md#requests>
 /// See <https://github.com/groue/GRDB.swift/blob/master/Documentation/GoodPracticesForDesigningRecordTypes.md>
@@ -68,6 +68,11 @@ extension DerivableRequest where RowDecoder == Member {
         // See https://github.com/groue/GRDB.swift/blob/master/README.md#string-comparison
         order(Member.Columns.name.collating(.localizedCaseInsensitiveCompare))
     }
+    
+//    func allMembers() {
+//        let request = Member.including(optional: Member.club)
+//        let memberInfos = MemberInfo.fetchAll(db, request)
+//    }
     
     /// A request of clubs ordered by age.
     ///

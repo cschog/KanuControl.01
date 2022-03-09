@@ -37,6 +37,6 @@ struct MemberEditionView: View {
 
 //struct MitgliederDetailView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        MemberEditionView(name: "Schog", vorname: "Chris")
+//        MemberEditionView()
 //    }
 //}

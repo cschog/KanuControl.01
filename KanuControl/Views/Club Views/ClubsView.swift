@@ -19,11 +19,12 @@ struct ClubsView: View {
     
     /// Tracks the presentation of the club creation sheet.
     @State private var newClubIsPresented = false
-
+    
     var body: some View {
         NavigationView {
             ClubList(clubs: clubs)
-                .navigationBarTitle(Text("\(clubs.count) Clubs"))
+                .navigationBarTitle(Text("\(clubs.count) Clubs"),
+                                    displayMode: .inline)
                 .navigationBarItems(
                     trailing: HStack {
                         EditButton()
