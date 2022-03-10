@@ -16,7 +16,7 @@ struct MemberFormView: View {
     @Query(ClubRequest(ordering: .byName)) private var clubs: [Club]
     
     @Binding var form: MemberForm
-    @State private var selectedClub = "EKC"
+    @State private var selectedClub: Club = .emptySelection
     
     var body: some View {
         
@@ -26,33 +26,47 @@ struct MemberFormView: View {
                     .accessibility(label: Text("Member Name"))
                 TextField("First Name", text: $form.firstName)
                     .accessibility(label: Text("First Name"))
+                Text (selectedClub.name)
             }.headerProminence(.increased)
-            Section(header: Text("Club")) {
+
+            Section(header: Text("Select a Club")) {
                 Picker("Club", selection: $selectedClub) {
-                    ForEach(clubs) { club in
-                        Text(club.name)
+                    ForEach(self.clubs.map(ClubPickerItem.init), id: \.club) {
+                        Text("\($0.club.name)")
                     }
-                } //.pickerStyle(.wheel)
+                } .pickerStyle(MenuPickerStyle())
+
             }.headerProminence(.increased)
         }
         .listStyle(InsetGroupedListStyle())
     }
 }
 
+struct ClubPickerItem {
+    let club: Club
+}
+
+extension Club {
+    static let emptySelection = Club(id: 2, name: "Eschweiler Kanu Club", shortcut: "EKC")
+}
+
 struct MemberForm {
     var name: String
     var firstName: String
+    var clubID: Int64
 }
 
 extension MemberForm {
     init(_ member: Member) {
         self.name = member.name
         self.firstName = member.firstName ?? ""
+        self.clubID = member.clubId ?? 0
     }
     
     func apply(to member: inout Member) {
         member.name = name
         member.firstName = firstName
+        member.clubId = clubID
     }
 }
 
