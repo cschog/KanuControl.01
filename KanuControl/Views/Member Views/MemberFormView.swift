@@ -18,8 +18,9 @@ struct MemberFormView: View {
     @Binding var form: MemberForm
     @State var selectedClub: Club = .emptySelection
     
-    private func printSelectedClub () {
-        print (self.selectedClub)
+    private func applySelectedClub () {
+        // print (self.selectedClub)
+        self.form.clubID = selectedClub.id ?? 0
     }
 
     var body: some View {
@@ -40,7 +41,7 @@ struct MemberFormView: View {
                     }
                 } .pickerStyle(MenuPickerStyle())
                     .onChange(of: self.selectedClub) { _ in
-                        printSelectedClub()
+                        applySelectedClub()
                             }
                 //Text("\($selectedClub.id ?? 0)")
 

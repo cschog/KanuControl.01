@@ -19,6 +19,7 @@ struct ClubsView: View {
     
     /// Tracks the presentation of the club creation sheet.
     @State private var newClubIsPresented = false
+    @Binding var isPresented: Bool
     
     var body: some View {
         NavigationView {
@@ -26,6 +27,9 @@ struct ClubsView: View {
                 .navigationBarTitle(Text("\(clubs.count) Clubs"),
                                     displayMode: .inline)
                 .navigationBarItems(
+                    leading: HStack {
+                        leaveClubsViewButton
+                    },
                     trailing: HStack {
                         EditButton()
                         newClubButton
@@ -53,6 +57,13 @@ struct ClubsView: View {
         .accessibility(label: Text("New Club"))
         .sheet(isPresented: $newClubIsPresented) {
             ClubCreationView()
+        }
+    }
+    
+    // Button to leave the ClubsView
+    private var leaveClubsViewButton: some View {
+        Button("Back") {
+            self.isPresented = false
         }
     }
     

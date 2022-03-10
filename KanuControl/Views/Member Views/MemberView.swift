@@ -14,7 +14,8 @@ struct MemberView: View {
     
     /// The `member` property is automatically updated when the database changes
     @Query(MemberRequest(ordering: .byName)) private var members: [Member]
-
+    
+    @Binding var isPresented: Bool
     
     /// We'll need to leave edit mode in several occasions.
     @State private var editMode = EditMode.inactive
@@ -27,6 +28,9 @@ struct MemberView: View {
             MemberList(members: members)
                 .navigationBarTitle(Text("\(members.count) Member"), displayMode: .inline)
                 .navigationBarItems(
+                    leading: HStack {
+                        leaveMemberViewButton
+                    },
                     trailing: HStack {
                         EditButton()
                         newMemberButton
@@ -39,6 +43,7 @@ struct MemberView: View {
                 .environment(\.editMode, $editMode)
         }
         .navigationViewStyle(.stack)
+        .navigationBarHidden(true)
     }
     
     // The button that presents the member creation sheet.
@@ -55,6 +60,13 @@ struct MemberView: View {
         }
     }
     
+    // Button to leave the MemberView
+    private var leaveMemberViewButton: some View {
+        Button("Back") {
+            self.isPresented = false
+        }
+    }
+    
     private func stopEditing() {
         withAnimation {
             editMode = .inactive
@@ -62,8 +74,8 @@ struct MemberView: View {
     }
 }
 
-struct MitgliederView_Previews: PreviewProvider {
-    static var previews: some View {
-        MemberView()
-    }
-}
+//struct MitgliederView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MemberView()
+//    }
+//}
