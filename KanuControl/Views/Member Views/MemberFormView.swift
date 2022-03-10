@@ -16,8 +16,12 @@ struct MemberFormView: View {
     @Query(ClubRequest(ordering: .byName)) private var clubs: [Club]
     
     @Binding var form: MemberForm
-    @State private var selectedClub: Club = .emptySelection
+    @State var selectedClub: Club = .emptySelection
     
+    private func printSelectedClub () {
+        print (self.selectedClub)
+    }
+
     var body: some View {
         
         List {
@@ -35,8 +39,13 @@ struct MemberFormView: View {
                         Text("\($0.club.name)")
                     }
                 } .pickerStyle(MenuPickerStyle())
+                    .onChange(of: self.selectedClub) { _ in
+                        printSelectedClub()
+                            }
+                //Text("\($selectedClub.id ?? 0)")
 
             }.headerProminence(.increased)
+           
         }
         .listStyle(InsetGroupedListStyle())
     }
@@ -47,7 +56,7 @@ struct ClubPickerItem {
 }
 
 extension Club {
-    static let emptySelection = Club(id: 2, name: "Eschweiler Kanu Club", shortcut: "EKC")
+    static let emptySelection = Club(id: 0, name: "", shortcut: "")
 }
 
 struct MemberForm {

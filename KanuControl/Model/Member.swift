@@ -78,10 +78,7 @@ extension DerivableRequest where RowDecoder == Member {
     ///
     /// For example:
     ///
-    ///     let clubs: [Club] = try dbWriter.read { db in
-    ///         try Club.all().orderedByScore().fetchAll(db)
-    ///     }
-    ///     let oldestUser: User? = try dbWriter.read { db in
-    ///         try Club.all().orderedByAge().fetchOne(db)
-    ///     }
+//        let clubs: [Club] = try dbWriter.read { db in
+//             try Club.all().orderedByScore().fetchAll(db)
+//         }
 }

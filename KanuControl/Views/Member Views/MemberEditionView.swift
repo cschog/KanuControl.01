@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+
 // The view that edits an existing member.
 struct MemberEditionView: View {
     /// Write access to the database
     @Environment(\.appDatabase) private var appDatabase
     @Environment(\.isPresented) private var isPresented
+    
     private let member: Member
     @State private var form: MemberForm
     
@@ -34,6 +36,7 @@ struct MemberEditionView: View {
             }
     }
 }
+
 
 //struct MitgliederDetailView_Previews: PreviewProvider {
 //    static var previews: some View {

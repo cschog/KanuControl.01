@@ -27,11 +27,11 @@ struct AppDatabase {
     private var migrator: DatabaseMigrator {
         var migrator = DatabaseMigrator()
         
-        #if DEBUG
+#if DEBUG
         // Speed up development by nuking the database when migrations change
         // See https://github.com/groue/GRDB.swift/blob/master/Documentation/Migrations.md#the-erasedatabaseonschemachange-option
         migrator.eraseDatabaseOnSchemaChange = true
-        #endif
+#endif
         
         migrator.registerMigration("createKC") { db in
             try db.create(table: "Club") { t in
@@ -87,10 +87,16 @@ extension AppDatabase {
         }
     }
     
-//    /// Refresh all users (by performing some random changes, for demo purpose).
-//    func refreshClubs() throws {
-//
-//    }
+    //    /// Refresh all users (by performing some random changes, for demo purpose).
+    //    func refreshClubs() throws {
+    //
+    //    }
+    
+    //    func readAllClubs () throws {
+    //        let clubs: [Club] = try dbWriter.read { db in
+    //            try Club.all().orderedByName().fetchAll(db)
+    //        }
+    //    }
 }
 
 // MARK: - Database Access: Writes Member
@@ -98,16 +104,16 @@ extension AppDatabase {
 extension AppDatabase {
     /// A validation error that prevents some member from being saved into
     /// the database.
-//    enum ValidationError: LocalizedError {
-//        case missingMemberName
-//
-//        var errorDescription: String? {
-//            switch self {
-//            case .missingMemberName:
-//                return "Please provide a Member name"
-//            }
-//        }
-//    }
+    //    enum ValidationError: LocalizedError {
+    //        case missingMemberName
+    //
+    //        var errorDescription: String? {
+    //            switch self {
+    //            case .missingMemberName:
+    //                return "Please provide a Member name"
+    //            }
+    //        }
+    //    }
     
     /// Saves (inserts or updates) a club. When the method returns, the
     /// club is present in the database, and its id is not nil.
@@ -134,11 +140,13 @@ extension AppDatabase {
         }
     }
     
+}
+
 //    /// Refresh all users (by performing some random changes, for demo purpose).
 //    func refreshMember() throws {
 //
 //    }
-}
+
 
 // MARK: - Database Access: Reads
 
