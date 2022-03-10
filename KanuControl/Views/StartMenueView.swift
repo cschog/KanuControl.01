@@ -12,7 +12,8 @@ struct StartMenueView: View {
     @Environment(\.appDatabase) private var appDatabase
     
     @State private var selection: String? = nil
-    @State var showingDetail = false
+    @State var showingMemberDetail = false
+    @State var showingClubDetail = false
     
     var body: some View {
         
@@ -31,10 +32,11 @@ struct StartMenueView: View {
                 HStack {
                     Spacer()
                     Button("Member") {
-                        showingDetail = true
+                        showingMemberDetail = true
+                        showingClubDetail = false
                     }
-                    .sheet(isPresented: $showingDetail) {
-                        MemberView(isPresented: $showingDetail)
+                    .sheet(isPresented: $showingMemberDetail) {
+                        MemberView(isPresented: $showingMemberDetail)
                     }
                     .frame(
                         width: DrawingConstants.frameWidth,
@@ -44,10 +46,11 @@ struct StartMenueView: View {
                     Spacer()
                     
                     Button("Clubs") {
-                        showingDetail = true
+                        showingClubDetail = true
+                        showingMemberDetail = false
                     }
-                    .sheet(isPresented: $showingDetail) {
-                        ClubsView(isPresented: $showingDetail)
+                    .sheet(isPresented: $showingClubDetail) {
+                        ClubsView(isPresented: $showingClubDetail)
                     }
                     .frame(
                         width: DrawingConstants.frameWidth,
