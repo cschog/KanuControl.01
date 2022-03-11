@@ -12,6 +12,7 @@
 		8330201627B6E5B800E5DE8A /* MemberEditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8330201527B6E5B800E5DE8A /* MemberEditionView.swift */; };
 		8331693D27C7E4C800D5C7EC /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331693C27C7E4C800D5C7EC /* Utility.swift */; };
 		8331693F27C7E5A600D5C7EC /* ClubsEditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331693E27C7E5A600D5C7EC /* ClubsEditionView.swift */; };
+		8358C8B727DB6198009ABA7A /* MemberInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358C8B627DB6198009ABA7A /* MemberInfoRequest.swift */; };
 		8376B1FD27D7D3D6009608A2 /* MemberInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376B1FC27D7D3D6009608A2 /* MemberInfo.swift */; };
 		837F58FE27D0DBF000EA0C83 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837F58FC27D0DBF000EA0C83 /* AppDatabase.swift */; };
 		837F58FF27D0DBF000EA0C83 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837F58FD27D0DBF000EA0C83 /* Persistence.swift */; };
@@ -39,6 +40,7 @@
 		8330201527B6E5B800E5DE8A /* MemberEditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberEditionView.swift; sourceTree = "<group>"; };
 		8331693C27C7E4C800D5C7EC /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		8331693E27C7E5A600D5C7EC /* ClubsEditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsEditionView.swift; sourceTree = "<group>"; };
+		8358C8B627DB6198009ABA7A /* MemberInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoRequest.swift; sourceTree = "<group>"; };
 		8376B1FC27D7D3D6009608A2 /* MemberInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfo.swift; sourceTree = "<group>"; };
 		837F58FC27D0DBF000EA0C83 /* AppDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		837F58FD27D0DBF000EA0C83 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				837F590227D0EE8900EA0C83 /* ClubRequest.swift */,
 				83F58C5227D243E400727235 /* MemberRequest.swift */,
 				8376B1FC27D7D3D6009608A2 /* MemberInfo.swift */,
+				8358C8B627DB6198009ABA7A /* MemberInfoRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				837F58FF27D0DBF000EA0C83 /* Persistence.swift in Sources */,
 				837F590127D0EC5F00EA0C83 /* ClubList.swift in Sources */,
 				83103F8D27B434FB008EF482 /* ClubsView.swift in Sources */,
+				8358C8B727DB6198009ABA7A /* MemberInfoRequest.swift in Sources */,
 				8376B1FD27D7D3D6009608A2 /* MemberInfo.swift in Sources */,
 				837F590327D0EE8900EA0C83 /* ClubRequest.swift in Sources */,
 				837F58FE27D0DBF000EA0C83 /* AppDatabase.swift in Sources */,

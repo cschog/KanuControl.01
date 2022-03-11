@@ -28,8 +28,11 @@ struct MemberFormView: View {
         List {
             Section(header: Text("Member")) {
                 TextField("Name", text: $form.name)
+                    .keyboardType(.alphabet)
+                    .disableAutocorrection(true)
                     .accessibility(label: Text("Member Name"))
                 TextField("First Name", text: $form.firstName)
+                    .disableAutocorrection(true)
                     .accessibility(label: Text("First Name"))
                 Text (selectedClub.name)
             }.headerProminence(.increased)

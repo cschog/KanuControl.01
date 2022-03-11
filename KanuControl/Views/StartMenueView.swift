@@ -11,10 +11,6 @@ struct StartMenueView: View {
     /// Write access to the database
     @Environment(\.appDatabase) private var appDatabase
     
-    @State private var selection: String? = nil
-    @State var showingMemberDetail = false
-    @State var showingClubDetail = false
-    
     var body: some View {
         
         ZStack {
@@ -31,32 +27,9 @@ struct StartMenueView: View {
                 
                 HStack {
                     Spacer()
-                    Button("Member") {
-                        showingMemberDetail = true
-                        showingClubDetail = false
-                    }
-                    .sheet(isPresented: $showingMemberDetail) {
-                        MemberView(isPresented: $showingMemberDetail)
-                    }
-                    .frame(
-                        width: DrawingConstants.frameWidth,
-                        height: DrawingConstants.frameHeight)
-                    .overlay(RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius).stroke())
-                    .background(RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius).fill(Color.white))
+                    MemberButton()
                     Spacer()
-                    
-                    Button("Clubs") {
-                        showingClubDetail = true
-                        showingMemberDetail = false
-                    }
-                    .sheet(isPresented: $showingClubDetail) {
-                        ClubsView(isPresented: $showingClubDetail)
-                    }
-                    .frame(
-                        width: DrawingConstants.frameWidth,
-                        height: DrawingConstants.frameHeight)
-                    .overlay(RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius).stroke())
-                    .background(RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius).fill(Color.white))
+                    ClubButton()
                     Spacer()
                 }
                 Spacer()
@@ -95,3 +68,41 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+
+struct MemberButton: View {
+    @State private var showingDetail = false
+    
+    var body: some View {
+        Button("Member") {
+            showingDetail = true
+            // showingClubDetail = false
+        }
+        .sheet(isPresented: $showingDetail) {
+            MemberView(isPresented: $showingDetail)
+        }
+        .frame(
+            width: DrawingConstants.frameWidth,
+            height: DrawingConstants.frameHeight)
+        .overlay(RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius).stroke())
+        .background(RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius).fill(Color.white))
+    }
+}
+
+struct ClubButton: View {
+    @State var showingClubDetail = false
+    
+    var body: some View {
+        Button("Clubs") {
+            showingClubDetail = true
+            //showingMemberDetail = false
+        }
+        .sheet(isPresented: $showingClubDetail) {
+            ClubsView(isPresented: $showingClubDetail)
+        }
+        .frame(
+            width: DrawingConstants.frameWidth,
+            height: DrawingConstants.frameHeight)
+        .overlay(RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius).stroke())
+        .background(RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius).fill(Color.white))
+    }
+}
