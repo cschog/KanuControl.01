@@ -4,8 +4,7 @@ import GRDB
 
 /// AppDatabase lets the application access the database.
 ///
-/// It applies the pratices recommended at
-/// <https://github.com/groue/GRDB.swift/blob/master/Documentation/GoodPracticesForDesigningRecordTypes.md>
+
 struct AppDatabase {
     /// Creates an `AppDatabase`, and make sure the database schema is ready.
     init(_ dbWriter: DatabaseWriter) throws {
@@ -14,26 +13,19 @@ struct AppDatabase {
     }
     
     /// Provides access to the database.
-    ///
-    /// Application can use a `DatabasePool`, while SwiftUI previews and tests
-    /// can use a fast in-memory `DatabaseQueue`.
-    ///
-    /// See <https://github.com/groue/GRDB.swift/blob/master/README.md#database-connections>
+    
     private let dbWriter: DatabaseWriter
     
     /// The DatabaseMigrator that defines the database schema.
-    ///
-    /// See <https://github.com/groue/GRDB.swift/blob/master/Documentation/Migrations.md>
+    
     private var migrator: DatabaseMigrator {
         var migrator = DatabaseMigrator()
         
 #if DEBUG
-        // Speed up development by nuking the database when migrations change
-        // See https://github.com/groue/GRDB.swift/blob/master/Documentation/Migrations.md#the-erasedatabaseonschemachange-option
         migrator.eraseDatabaseOnSchemaChange = true
 #endif
         
-        migrator.registerMigration("createKC") { db in
+        migrator.registerMigration("createKC V1.0") { db in
             try db.create(table: "Club") { t in
                 t.autoIncrementedPrimaryKey("id")
                 t.column("name", .text).notNull()
@@ -65,9 +57,6 @@ extension AppDatabase {
     /// Saves (inserts or updates) a club. When the method returns, the
     /// club is present in the database, and its id is not nil.
     func saveClub(_ club: inout Club) throws {
-        if club.name.isEmpty {
-            print ("Please provide a Club name")
-        }
         try dbWriter.write { db in
             try club.save(db)
         }
@@ -87,65 +76,50 @@ extension AppDatabase {
         }
     }
     
-    //    /// Refresh all users (by performing some random changes, for demo purpose).
-    //    func refreshClubs() throws {
-    //
-    //    }
-    
-    //    func readAllClubs () throws {
-    //        let clubs: [Club] = try dbWriter.read { db in
-    //            try Club.all().orderedByName().fetchAll(db)
-    //        }
-    //    }
 }
 
-// MARK: - Database Access: Writes Member
+// MARK: - Database Access: Writes & Read Member / MemberInfos
 
 extension AppDatabase {
-    /// A validation error that prevents some member from being saved into
-    /// the database.
-    //    enum ValidationError: LocalizedError {
-    //        case missingMemberName
-    //
-    //        var errorDescription: String? {
-    //            switch self {
-    //            case .missingMemberName:
-    //                return "Please provide a Member name"
-    //            }
-    //        }
-    //    }
     
-    /// Saves (inserts or updates) a club. When the method returns, the
-    /// club is present in the database, and its id is not nil.
+    /// Saves (inserts or updates) a member. When the method returns, the
+    /// member is present in the database, and its id is not nil.
     func saveMember(_ member: inout Member) throws {
-        if member.name.isEmpty {
-            print ("Provide a Member Name")
-        }
         try dbWriter.write { db in
             try member.save(db)
         }
     }
     
-    /// Delete the specified club
+//    /// Saves (inserts or updates) a membe with the club. When the method returns, the
+//    /// member is present in the database, and its id is not nil.
+//    func saveMemberInfo(_ memberInfo: inout MemberInfo) throws {
+//        try dbWriter.write { db in
+//            try memberInfo.save(db)
+//        }
+//    }
+    
+    /// Delete the specified member
     func deleteMember(ids: [Int64]) throws {
         try dbWriter.write { db in
             _ = try Member.deleteAll(db, ids: ids)
         }
     }
     
-    /// Delete all clubs
+    /// Delete all member
     func deleteAllMember() throws {
         try dbWriter.write { db in
             _ = try Member.deleteAll(db)
         }
     }
     
+    /// read all Member including their club
+    func readAllMemberWithClub() throws -> [MemberInfo] {
+        try dbWriter.read { db in
+            let request = Member.including(optional: Member.club)
+            return try MemberInfo.fetchAll(db, request)
+        }
+    }
 }
-
-//    /// Refresh all users (by performing some random changes, for demo purpose).
-//    func refreshMember() throws {
-//
-//    }
 
 
 // MARK: - Database Access: Reads

@@ -48,12 +48,12 @@ struct ClubRequest: Queryable {
             .eraseToAnyPublisher()
     }
     
-    // This method is not required by Queryable, but it makes it easier
-    // to test ClubRequest.
+    /// This method is not required by Queryable, but it makes it easier
+    /// to test ClubRequest.
     func fetchValue(_ db: Database) throws -> [Club] {
         switch ordering {
         case .byName:
-            return try Club.all().orderedByName().fetchAll(db)
+            return try Club.all().orderedByClubName().fetchAll(db)
         }
     }
 }

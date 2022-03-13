@@ -19,9 +19,6 @@ struct Club: Identifiable, Equatable {
 // MARK: - Persistence
 
 /// Make Club a Codable Record.
-///
-/// See <https://github.com/groue/GRDB.swift/blob/master/README.md#records>
-
 extension Club: Codable, Hashable, FetchableRecord, MutablePersistableRecord {
     // Define database columns from CodingKeys
     fileprivate enum Columns {
@@ -39,7 +36,8 @@ extension Club: Codable, Hashable, FetchableRecord, MutablePersistableRecord {
 
 // MARK: - Associations
 
-extension Club: TableRecord, EncodableRecord {
+//extension Club: TableRecord, EncodableRecord {
+extension Club: TableRecord {
 
     static let member = hasMany(Member.self)
 
@@ -53,30 +51,14 @@ extension Club: TableRecord, EncodableRecord {
 /// Define some club requests used by the application.
 ///
 /// See <https://github.com/groue/GRDB.swift/blob/master/README.md#requests>
-/// See <https://github.com/groue/GRDB.swift/blob/master/Documentation/GoodPracticesForDesigningRecordTypes.md>
+
 extension DerivableRequest where RowDecoder == Club {
+   
     /// A request of clubs ordered by name.
-    ///
-    /// For example:
-    ///
-    ///     let clubs: [Club] = try dbWriter.read { db in
-    ///         try Club.all().orderedByName().fetchAll(db)
-    ///     }
-    func orderedByName() -> Self {
+    func orderedByClubName() -> Self {
         // Sort by name in a localized case insensitive fashion
         // See https://github.com/groue/GRDB.swift/blob/master/README.md#string-comparison
         order(Club.Columns.name.collating(.localizedCaseInsensitiveCompare))
     }
-    
-    /// A request of clubs ordered by age.
-    ///
-    /// For example:
-    ///
-    ///     let clubs: [Club] = try dbWriter.read { db in
-    ///         try Club.all().orderedByScore().fetchAll(db)
-    ///     }
-    ///     let oldestUser: User? = try dbWriter.read { db in
-    ///         try Club.all().orderedByAge().fetchOne(db)
-    ///     }
 }
 

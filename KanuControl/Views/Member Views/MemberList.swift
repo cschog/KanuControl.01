@@ -15,9 +15,10 @@ struct MemberList: View {
     @State private var showingAlert = false
     @State private var deleteRow = false
     @State private var memberIds: [Int64] = [0]
+    var dummy: [Int64] = [1,2]
     
     /// The member in the list
-    var members: [Member]
+    @State private var members: [Member]
     
     var body: some View {
         List {
@@ -29,12 +30,13 @@ struct MemberList: View {
                 }
             }
             .onDelete { offsets in
-                memberIds = offsets.compactMap { members[$0].id }
+            memberIds =  dummy // offsets.compactMap { memberInfos[$0].id }
                 showingAlert = true
             }
             .alert("Wirklich löschen?", isPresented: $showingAlert) {
                 Button("OK", role: nil, action: {
-                    try! appDatabase.deleteMember(ids: memberIds)
+                    print ("delete Member")
+//                    try! appDatabase.deleteMember(ids: memberIds)
                 })
                 Button("Cancel", role: .cancel, action: {
                 })}
@@ -62,9 +64,3 @@ private struct MemberRow: View {
         }
     }
 }
-
-//struct MemberList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MemberList(members: <#T##[Member]#>)
-//    }
-//}

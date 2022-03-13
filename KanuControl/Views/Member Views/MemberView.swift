@@ -13,7 +13,7 @@ struct MemberView: View {
     @Environment(\.appDatabase) private var appDatabase
     
     /// The `member` property is automatically updated when the database changes
-    @Query(MemberRequest(ordering: .byName)) private var members: [Member]
+    @Query(MemberInfoRequest()) private var memberInfos: [MemberInfo]
     
     @Binding var isPresented: Bool
     
@@ -24,26 +24,28 @@ struct MemberView: View {
     @State private var newMemberIsPresented = false
     
     var body: some View {
-        NavigationView {
-            MemberList(members: members)
-                .navigationBarTitle(Text("\(members.count) Member"), displayMode: .inline)
-                .navigationBarItems(
-                    leading: HStack {
-                        leaveMemberViewButton
-                    },
-                    trailing: HStack {
-                        EditButton()
-                        newMemberButton
-                    })
-                .onChange(of: members) { members in
-                    if members.isEmpty {
-                        stopEditing()
-                    }
-                }
-                .environment(\.editMode, $editMode)
-        }
-        .navigationViewStyle(.stack)
-        .navigationBarHidden(true)
+        
+        Text ("test")
+        //        NavigationView {
+        //            MemberList(memberInfos: memberInfos)
+        //                .navigationBarTitle(Text("\(memberInfos.count) Member"), displayMode: .inline)
+        //                .navigationBarItems(
+        //                    leading: HStack {
+        //                        leaveMemberViewButton
+        //                    },
+        //                    trailing: HStack {
+        //                        EditButton()
+        //                        newMemberButton
+        //                    })
+        //                .onChange(of: memberInfos) { members in
+        //                    if members.isEmpty {
+        //                        stopEditing()
+        //                    }
+        //                }
+        //                .environment(\.editMode, $editMode)
+        //        }
+        //        .navigationViewStyle(.stack)
+        //        .navigationBarHidden(true)
     }
     
     // The button that presents the member creation sheet.

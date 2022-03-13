@@ -18,13 +18,14 @@
 		837F58FF27D0DBF000EA0C83 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837F58FD27D0DBF000EA0C83 /* Persistence.swift */; };
 		837F590127D0EC5F00EA0C83 /* ClubList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837F590027D0EC5F00EA0C83 /* ClubList.swift */; };
 		837F590327D0EE8900EA0C83 /* ClubRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837F590227D0EE8900EA0C83 /* ClubRequest.swift */; };
+		838357C327DE4F5E00693B16 /* MemberList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838357C227DE4F5E00693B16 /* MemberList.swift */; };
 		8386883827CFB6360045A4C4 /* ClubCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8386883727CFB6360045A4C4 /* ClubCreationView.swift */; };
 		8386883A27CFBE480045A4C4 /* ClubFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8386883927CFBE480045A4C4 /* ClubFormView.swift */; };
-		83DAA15427C4EA9900AB8524 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 83DAA15327C4EA9900AB8524 /* GRDB */; };
-		83DAA15727C4EB8000AB8524 /* GRDBQuery in Frameworks */ = {isa = PBXBuildFile; productRef = 83DAA15627C4EB8000AB8524 /* GRDBQuery */; };
+		83BD66F827DDFCD9000EEB4C /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 83BD66F727DDFCD9000EEB4C /* GRDB */; };
+		83BD66FB27DDFCEA000EEB4C /* GRDBQuery in Frameworks */ = {isa = PBXBuildFile; productRef = 83BD66FA27DDFCEA000EEB4C /* GRDBQuery */; };
+		83BD66FD27DE1723000EEB4C /* MemberView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BD66FC27DE1723000EEB4C /* MemberView2.swift */; };
 		83DAA15B27C501BE00AB8524 /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DAA15A27C501BE00AB8524 /* Club.swift */; };
 		83F58C5327D243E400727235 /* MemberRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F58C5227D243E400727235 /* MemberRequest.swift */; };
-		83F58C5727D24B4B00727235 /* MemberList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F58C5627D24B4B00727235 /* MemberList.swift */; };
 		83F58C5927D24F2E00727235 /* MemberFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F58C5827D24F2E00727235 /* MemberFormView.swift */; };
 		83F58C5B27D255B500727235 /* MemberCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F58C5A27D255B500727235 /* MemberCreationView.swift */; };
 		83FA542A27B42F6E00B9AF25 /* KanuControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FA542927B42F6E00B9AF25 /* KanuControlApp.swift */; };
@@ -46,11 +47,12 @@
 		837F58FD27D0DBF000EA0C83 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		837F590027D0EC5F00EA0C83 /* ClubList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubList.swift; sourceTree = "<group>"; };
 		837F590227D0EE8900EA0C83 /* ClubRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubRequest.swift; sourceTree = "<group>"; };
+		838357C227DE4F5E00693B16 /* MemberList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberList.swift; sourceTree = "<group>"; };
 		8386883727CFB6360045A4C4 /* ClubCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCreationView.swift; sourceTree = "<group>"; };
 		8386883927CFBE480045A4C4 /* ClubFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubFormView.swift; sourceTree = "<group>"; };
+		83BD66FC27DE1723000EEB4C /* MemberView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView2.swift; sourceTree = "<group>"; };
 		83DAA15A27C501BE00AB8524 /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
 		83F58C5227D243E400727235 /* MemberRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRequest.swift; sourceTree = "<group>"; };
-		83F58C5627D24B4B00727235 /* MemberList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberList.swift; sourceTree = "<group>"; };
 		83F58C5827D24F2E00727235 /* MemberFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberFormView.swift; sourceTree = "<group>"; };
 		83F58C5A27D255B500727235 /* MemberCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCreationView.swift; sourceTree = "<group>"; };
 		83FA542627B42F6E00B9AF25 /* KanuControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanuControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,8 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83DAA15727C4EB8000AB8524 /* GRDBQuery in Frameworks */,
-				83DAA15427C4EA9900AB8524 /* GRDB in Frameworks */,
+				83BD66FB27DDFCEA000EEB4C /* GRDBQuery in Frameworks */,
+				83BD66F827DDFCD9000EEB4C /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,11 +114,12 @@
 		83F58C5127D242F500727235 /* Member Views */ = {
 			isa = PBXGroup;
 			children = (
+				838357C227DE4F5E00693B16 /* MemberList.swift */,
 				83FA543827B4308C00B9AF25 /* MemberView.swift */,
-				83F58C5627D24B4B00727235 /* MemberList.swift */,
 				8330201527B6E5B800E5DE8A /* MemberEditionView.swift */,
 				83F58C5827D24F2E00727235 /* MemberFormView.swift */,
 				83F58C5A27D255B500727235 /* MemberCreationView.swift */,
+				83BD66FC27DE1723000EEB4C /* MemberView2.swift */,
 			);
 			path = "Member Views";
 			sourceTree = "<group>";
@@ -185,8 +188,8 @@
 			);
 			name = KanuControl;
 			packageProductDependencies = (
-				83DAA15327C4EA9900AB8524 /* GRDB */,
-				83DAA15627C4EB8000AB8524 /* GRDBQuery */,
+				83BD66F727DDFCD9000EEB4C /* GRDB */,
+				83BD66FA27DDFCEA000EEB4C /* GRDBQuery */,
 			);
 			productName = KanuControl;
 			productReference = 83FA542627B42F6E00B9AF25 /* KanuControl.app */;
@@ -217,8 +220,8 @@
 			);
 			mainGroup = 83FA541D27B42F6E00B9AF25;
 			packageReferences = (
-				83DAA15227C4EA9900AB8524 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
-				83DAA15527C4EB8000AB8524 /* XCRemoteSwiftPackageReference "GRDBQuery" */,
+				83BD66F627DDFCD9000EEB4C /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+				83BD66F927DDFCEA000EEB4C /* XCRemoteSwiftPackageReference "GRDBQuery" */,
 			);
 			productRefGroup = 83FA542727B42F6E00B9AF25 /* Products */;
 			projectDirPath = "";
@@ -247,13 +250,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8386883827CFB6360045A4C4 /* ClubCreationView.swift in Sources */,
-				83F58C5727D24B4B00727235 /* MemberList.swift in Sources */,
 				8331693D27C7E4C800D5C7EC /* Utility.swift in Sources */,
 				83DAA15B27C501BE00AB8524 /* Club.swift in Sources */,
 				8330201027B6D8E600E5DE8A /* Member.swift in Sources */,
 				83F58C5327D243E400727235 /* MemberRequest.swift in Sources */,
 				8330201627B6E5B800E5DE8A /* MemberEditionView.swift in Sources */,
 				83F58C5B27D255B500727235 /* MemberCreationView.swift in Sources */,
+				838357C327DE4F5E00693B16 /* MemberList.swift in Sources */,
 				83F58C5927D24F2E00727235 /* MemberFormView.swift in Sources */,
 				8331693F27C7E5A600D5C7EC /* ClubsEditionView.swift in Sources */,
 				8386883A27CFBE480045A4C4 /* ClubFormView.swift in Sources */,
@@ -261,6 +264,7 @@
 				837F58FF27D0DBF000EA0C83 /* Persistence.swift in Sources */,
 				837F590127D0EC5F00EA0C83 /* ClubList.swift in Sources */,
 				83103F8D27B434FB008EF482 /* ClubsView.swift in Sources */,
+				83BD66FD27DE1723000EEB4C /* MemberView2.swift in Sources */,
 				8358C8B727DB6198009ABA7A /* MemberInfoRequest.swift in Sources */,
 				8376B1FD27D7D3D6009608A2 /* MemberInfo.swift in Sources */,
 				837F590327D0EE8900EA0C83 /* ClubRequest.swift in Sources */,
@@ -471,7 +475,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		83DAA15227C4EA9900AB8524 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+		83BD66F627DDFCD9000EEB4C /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/groue/GRDB.swift.git";
 			requirement = {
@@ -479,7 +483,7 @@
 				kind = branch;
 			};
 		};
-		83DAA15527C4EB8000AB8524 /* XCRemoteSwiftPackageReference "GRDBQuery" */ = {
+		83BD66F927DDFCEA000EEB4C /* XCRemoteSwiftPackageReference "GRDBQuery" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/groue/GRDBQuery.git";
 			requirement = {
@@ -490,14 +494,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		83DAA15327C4EA9900AB8524 /* GRDB */ = {
+		83BD66F727DDFCD9000EEB4C /* GRDB */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 83DAA15227C4EA9900AB8524 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			package = 83BD66F627DDFCD9000EEB4C /* XCRemoteSwiftPackageReference "GRDB.swift" */;
 			productName = GRDB;
 		};
-		83DAA15627C4EB8000AB8524 /* GRDBQuery */ = {
+		83BD66FA27DDFCEA000EEB4C /* GRDBQuery */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 83DAA15527C4EB8000AB8524 /* XCRemoteSwiftPackageReference "GRDBQuery" */;
+			package = 83BD66F927DDFCEA000EEB4C /* XCRemoteSwiftPackageReference "GRDBQuery" */;
 			productName = GRDBQuery;
 		};
 /* End XCSwiftPackageProductDependency section */
