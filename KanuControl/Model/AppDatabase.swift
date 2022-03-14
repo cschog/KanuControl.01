@@ -90,6 +90,12 @@ extension AppDatabase {
         }
     }
     
+    func saveMemberInfo (_ memberInfo: inout MemberInfo) throws {
+        try dbWriter.write { db in
+            try memberInfo.member.save(db)
+        }
+    }
+    
 //    /// Saves (inserts or updates) a membe with the club. When the method returns, the
 //    /// member is present in the database, and its id is not nil.
 //    func saveMemberInfo(_ memberInfo: inout MemberInfo) throws {

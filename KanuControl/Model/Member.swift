@@ -8,12 +8,15 @@
 import Foundation
 import GRDB
 
-struct Member: Identifiable, Equatable {
+struct Member: Identifiable, Equatable, Hashable {
     // The person id.
     
     var id: Int64?
     var name: String
-    var firstName: String?
+    var firstName: String
+    var fullName: String {
+        return name + ", " + firstName
+    }
     var clubId: Int64?
 }
 

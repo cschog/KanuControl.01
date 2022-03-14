@@ -70,16 +70,16 @@ struct MemberForm {
 }
 
 extension MemberForm {
-    init(_ member: Member) {
-        self.name = member.name
-        self.firstName = member.firstName ?? ""
-        self.clubID = member.clubId ?? 0
+    init(_ memberInfo: MemberInfo) {
+        self.name = memberInfo.member.name
+        self.firstName = memberInfo.member.firstName
+        self.clubID = memberInfo.club?.id ?? 0
     }
     
-    func apply(to member: inout Member) {
-        member.name = name
-        member.firstName = firstName
-        member.clubId = clubID
+    func apply(to memberInfo: inout MemberInfo) {
+        memberInfo.member.name = name
+        memberInfo.member.firstName = firstName
+        memberInfo.member.clubId = clubID
     }
 }
 

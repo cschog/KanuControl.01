@@ -40,9 +40,10 @@ struct MemberCreationView: View {
     
     private func save() {
         do {
-            var member = Member(id: nil, name: "", firstName: "")
-            form.apply(to: &member)
-            try appDatabase.saveMember(&member)
+            var memberInfo = MemberInfo(member: Member(id: nil, name: "", firstName: "", clubId: nil),
+                                        club: Club(id: nil, name: "", shortcut: ""))
+            form.apply(to: &memberInfo)
+            try appDatabase.saveMemberInfo(&memberInfo)
             dismiss()
         } catch {
             errorAlertTitle = (error as? LocalizedError)?.errorDescription ?? "An error occurred"

@@ -14,12 +14,12 @@ struct MemberEditionView: View {
     @Environment(\.appDatabase) private var appDatabase
     @Environment(\.isPresented) private var isPresented
     
-    private let member: Member
+    private let memberInfo: MemberInfo
     @State private var form: MemberForm
     
-    init(member: Member) {
-        self.member = member
-        self.form = MemberForm(member)
+    init(memberInfo: MemberInfo) {
+        self.memberInfo = memberInfo
+        self.form = MemberForm(memberInfo)
     }
     
     var body: some View {
@@ -27,19 +27,12 @@ struct MemberEditionView: View {
             .onChange(of: isPresented) { isPresented in
                 // Save when back button is pressed
                 if !isPresented {
-                    var savedMember = member
-                    form.apply(to: &savedMember)
+                    var savedMemberInfo = memberInfo
+                    form.apply(to: &savedMemberInfo)
                     // Ignore error because I don't know how to cancel the
                     // back button and present the error
-                    try? appDatabase.saveMember(&savedMember)
+                    try? appDatabase.saveMemberInfo(&savedMemberInfo)
                 }
             }
     }
 }
-
-
-//struct MitgliederDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MemberEditionView()
-//    }
-//}

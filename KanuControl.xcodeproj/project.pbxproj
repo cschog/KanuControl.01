@@ -19,6 +19,7 @@
 		837F590127D0EC5F00EA0C83 /* ClubList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837F590027D0EC5F00EA0C83 /* ClubList.swift */; };
 		837F590327D0EE8900EA0C83 /* ClubRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837F590227D0EE8900EA0C83 /* ClubRequest.swift */; };
 		838357C327DE4F5E00693B16 /* MemberList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838357C227DE4F5E00693B16 /* MemberList.swift */; };
+		838357C527DE758600693B16 /* MemberList2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838357C427DE758600693B16 /* MemberList2.swift */; };
 		8386883827CFB6360045A4C4 /* ClubCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8386883727CFB6360045A4C4 /* ClubCreationView.swift */; };
 		8386883A27CFBE480045A4C4 /* ClubFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8386883927CFBE480045A4C4 /* ClubFormView.swift */; };
 		83BD66F827DDFCD9000EEB4C /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 83BD66F727DDFCD9000EEB4C /* GRDB */; };
@@ -48,6 +49,7 @@
 		837F590027D0EC5F00EA0C83 /* ClubList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubList.swift; sourceTree = "<group>"; };
 		837F590227D0EE8900EA0C83 /* ClubRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubRequest.swift; sourceTree = "<group>"; };
 		838357C227DE4F5E00693B16 /* MemberList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberList.swift; sourceTree = "<group>"; };
+		838357C427DE758600693B16 /* MemberList2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberList2.swift; sourceTree = "<group>"; };
 		8386883727CFB6360045A4C4 /* ClubCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCreationView.swift; sourceTree = "<group>"; };
 		8386883927CFBE480045A4C4 /* ClubFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubFormView.swift; sourceTree = "<group>"; };
 		83BD66FC27DE1723000EEB4C /* MemberView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView2.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		83F58C5127D242F500727235 /* Member Views */ = {
 			isa = PBXGroup;
 			children = (
+				838357C427DE758600693B16 /* MemberList2.swift */,
 				838357C227DE4F5E00693B16 /* MemberList.swift */,
 				83FA543827B4308C00B9AF25 /* MemberView.swift */,
 				8330201527B6E5B800E5DE8A /* MemberEditionView.swift */,
@@ -264,6 +267,7 @@
 				837F58FF27D0DBF000EA0C83 /* Persistence.swift in Sources */,
 				837F590127D0EC5F00EA0C83 /* ClubList.swift in Sources */,
 				83103F8D27B434FB008EF482 /* ClubsView.swift in Sources */,
+				838357C527DE758600693B16 /* MemberList2.swift in Sources */,
 				83BD66FD27DE1723000EEB4C /* MemberView2.swift in Sources */,
 				8358C8B727DB6198009ABA7A /* MemberInfoRequest.swift in Sources */,
 				8376B1FD27D7D3D6009608A2 /* MemberInfo.swift in Sources */,

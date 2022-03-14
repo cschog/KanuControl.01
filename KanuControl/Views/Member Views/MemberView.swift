@@ -25,27 +25,27 @@ struct MemberView: View {
     
     var body: some View {
         
-        Text ("test")
-        //        NavigationView {
-        //            MemberList(memberInfos: memberInfos)
-        //                .navigationBarTitle(Text("\(memberInfos.count) Member"), displayMode: .inline)
-        //                .navigationBarItems(
-        //                    leading: HStack {
-        //                        leaveMemberViewButton
-        //                    },
-        //                    trailing: HStack {
-        //                        EditButton()
-        //                        newMemberButton
-        //                    })
-        //                .onChange(of: memberInfos) { members in
-        //                    if members.isEmpty {
-        //                        stopEditing()
-        //                    }
-        //                }
-        //                .environment(\.editMode, $editMode)
-        //        }
-        //        .navigationViewStyle(.stack)
-        //        .navigationBarHidden(true)
+        Text("Test")
+//        NavigationView {
+//            MemberList(memberInfos: memberInfos)
+//                .navigationBarTitle(Text("\(memberInfos.count) Member"), displayMode: .inline)
+//                .navigationBarItems(
+//                    leading: HStack {
+//                        leaveMemberViewButton
+//                    },
+//                    trailing: HStack {
+//                        EditButton()
+//                        newMemberButton
+//                    })
+//                .onChange(of: memberInfos) { members in
+//                    if members.isEmpty {
+//                        stopEditing()
+//                    }
+//                }
+//                .environment(\.editMode, $editMode)
+//        }
+//        .navigationViewStyle(.stack)
+//        .navigationBarHidden(true)
     }
     
     // The button that presents the member creation sheet.

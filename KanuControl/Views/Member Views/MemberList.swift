@@ -18,39 +18,41 @@ struct MemberList: View {
     var dummy: [Int64] = [1,2]
     
     /// The member in the list
-    @State private var members: [Member]
+    var memberInfos: [MemberInfo]
     
     var body: some View {
-        List {
-            ForEach(members) { member in
-                NavigationLink(destination: editionView(for: member)) {
-                    MemberRow(member: member)
-                    // Don't animate member update
-                        .animation(nil, value: member)
-                }
-            }
-            .onDelete { offsets in
-            memberIds =  dummy // offsets.compactMap { memberInfos[$0].id }
-                showingAlert = true
-            }
-            .alert("Wirklich löschen?", isPresented: $showingAlert) {
-                Button("OK", role: nil, action: {
-                    print ("delete Member")
-//                    try! appDatabase.deleteMember(ids: memberIds)
-                })
-                Button("Cancel", role: .cancel, action: {
-                })}
-            
-        }
-        // Animate list updates
-        .animation(.default, value: members)
-        .listStyle(.plain)
+        
+        Text("Test")
+//        List {
+//            ForEach(members) { member in
+//                NavigationLink(destination: editionView(for: member)) {
+//                    MemberRow(member: member)
+//                    // Don't animate member update
+//                        .animation(nil, value: member)
+//                }
+//            }
+//            .onDelete { offsets in
+//            memberIds =  dummy // offsets.compactMap { memberInfos[$0].id }
+//                showingAlert = true
+//            }
+//            .alert("Wirklich löschen?", isPresented: $showingAlert) {
+//                Button("OK", role: nil, action: {
+//                    print ("delete Member")
+////                    try! appDatabase.deleteMember(ids: memberIds)
+//                })
+//                Button("Cancel", role: .cancel, action: {
+//                })}
+//
+//        }
+//        // Animate list updates
+//        .animation(.default, value: members)
+//        .listStyle(.plain)
     }
     
-    /// The view that edits a member in the list.
-    private func editionView(for member: Member) -> some View {
-        MemberEditionView(member: member).navigationBarTitle(member.name)
-    }
+//    /// The view that edits a member in the list.
+//    private func editionView(for member: Member) -> some View {
+//        MemberEditionView(member: member).navigationBarTitle(member.name)
+//    }
 }
 
 private struct MemberRow: View {
@@ -60,7 +62,7 @@ private struct MemberRow: View {
         HStack {
             Text(member.name)
             Spacer()
-            Text(member.firstName ?? "")
+            Text(member.firstName)
         }
     }
 }
