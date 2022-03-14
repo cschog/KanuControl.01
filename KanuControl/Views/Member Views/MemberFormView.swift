@@ -15,14 +15,18 @@ struct MemberFormView: View {
     /// The `clubs` property is automatically updated when the database changes
     @Query(ClubRequest(ordering: .byName)) private var clubs: [Club]
     
+    /// The `memberInfo` property is automatically updated when the database changes
+    @Query(MemberInfoRequest()) private var memberInfos: [MemberInfo]
+    
     @Binding var form: MemberForm
     @State var selectedClub: Club = .emptySelection
     
     private func applySelectedClub () {
         // print (self.selectedClub)
         self.form.clubID = selectedClub.id ?? 0
+        self.form.clubName = selectedClub.name
     }
-
+    
     var body: some View {
         
         List {
@@ -34,9 +38,11 @@ struct MemberFormView: View {
                 TextField("First Name", text: $form.firstName)
                     .disableAutocorrection(true)
                     .accessibility(label: Text("First Name"))
-                Text (selectedClub.name)
+                //                Text (selectedClub.name)
+                TextField("Club Name", text: $form.clubName)
+                    .disabled(true)
             }.headerProminence(.increased)
-
+            
             Section(header: Text("Select a Club")) {
                 Picker("Club", selection: $selectedClub) {
                     ForEach(self.clubs.map(ClubPickerItem.init), id: \.club) {
@@ -45,11 +51,8 @@ struct MemberFormView: View {
                 } .pickerStyle(MenuPickerStyle())
                     .onChange(of: self.selectedClub) { _ in
                         applySelectedClub()
-                            }
-                //Text("\($selectedClub.id ?? 0)")
-
+                    }
             }.headerProminence(.increased)
-           
         }
         .listStyle(InsetGroupedListStyle())
     }
@@ -67,6 +70,7 @@ struct MemberForm {
     var name: String
     var firstName: String
     var clubID: Int64
+    var clubName: String
 }
 
 extension MemberForm {
@@ -74,12 +78,15 @@ extension MemberForm {
         self.name = memberInfo.member.name
         self.firstName = memberInfo.member.firstName
         self.clubID = memberInfo.club?.id ?? 0
+        self.clubName = memberInfo.club?.name ?? ""
     }
     
     func apply(to memberInfo: inout MemberInfo) {
         memberInfo.member.name = name
         memberInfo.member.firstName = firstName
         memberInfo.member.clubId = clubID
+        memberInfo.club?.name = clubName
+        
     }
 }
 

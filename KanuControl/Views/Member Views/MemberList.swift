@@ -1,16 +1,18 @@
 //
-//  MemberList.swift
+//  MemberList2.swift
 //  KanuControl
 //
-//  Created by Christoph Schog on 04.03.22.
+//  Created by Christoph Schog on 13.03.22.
 //
 
 import SwiftUI
+import GRDBQuery
 
 struct MemberList: View {
     
     // Write access to the database
     @Environment(\.appDatabase) private var appDatabase
+    // @Query(MemberRequest(ordering: .byName)) private var member: [Member]
     
     @State private var showingAlert = false
     @State private var deleteRow = false
@@ -20,49 +22,46 @@ struct MemberList: View {
     /// The member in the list
     var memberInfos: [MemberInfo]
     
+    
     var body: some View {
-        
-        Text("Test")
-//        List {
-//            ForEach(members) { member in
-//                NavigationLink(destination: editionView(for: member)) {
-//                    MemberRow(member: member)
-//                    // Don't animate member update
-//                        .animation(nil, value: member)
-//                }
-//            }
-//            .onDelete { offsets in
-//            memberIds =  dummy // offsets.compactMap { memberInfos[$0].id }
-//                showingAlert = true
-//            }
-//            .alert("Wirklich löschen?", isPresented: $showingAlert) {
-//                Button("OK", role: nil, action: {
-//                    print ("delete Member")
-////                    try! appDatabase.deleteMember(ids: memberIds)
-//                })
-//                Button("Cancel", role: .cancel, action: {
-//                })}
-//
-//        }
-//        // Animate list updates
-//        .animation(.default, value: members)
-//        .listStyle(.plain)
+        List {
+            ForEach(0 ..< memberInfos.count, id: \.self) { value in
+                NavigationLink(destination: editionView(for: memberInfos[value])) {
+                    MemberInfoRow(memberInfo: memberInfos[value])
+                    // Don't animate member update
+                        .animation(nil, value: memberInfos[value])
+                }
+            }
+            .onDelete { offsets in
+                memberIds =  offsets.compactMap({ value in
+                    return memberInfos[value].member.id
+                })
+                showingAlert = true
+            }
+            .alert("Wirklich löschen?", isPresented: $showingAlert) {
+                Button("OK", role: nil, action: {
+                    
+                    try! appDatabase.deleteMember(ids: memberIds)
+                })
+                Button("Cancel", role: .cancel, action: {
+                })}
+        }
+    }
+    /// The view that edits a member in the list.
+    private func editionView(for memberInfo: MemberInfo) -> some View {
+        MemberEditionView(memberInfo: memberInfo).navigationBarTitle(memberInfo.member.fullName)
     }
     
-//    /// The view that edits a member in the list.
-//    private func editionView(for member: Member) -> some View {
-//        MemberEditionView(member: member).navigationBarTitle(member.name)
-//    }
 }
 
-private struct MemberRow: View {
-    var member: Member
+private struct MemberInfoRow: View {
+    var memberInfo: MemberInfo
     
     var body: some View {
         HStack {
-            Text(member.name)
+            Text(memberInfo.member.fullName)
             Spacer()
-            Text(member.firstName)
+            Text(memberInfo.club?.shortcut ?? "")
         }
     }
 }

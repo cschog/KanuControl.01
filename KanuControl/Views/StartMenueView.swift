@@ -78,7 +78,7 @@ struct MemberButton: View {
             // showingClubDetail = false
         }
         .sheet(isPresented: $showingDetail) {
-            MemberView2(isPresented: $showingDetail)
+            MemberView(isPresented: $showingDetail)
         }
         .frame(
             width: DrawingConstants.frameWidth,

@@ -1,12 +1,12 @@
 //
-//  MemberView.swift
+//  MemberView2.swift
 //  KanuControl
 //
-//  Created by Christoph Schog on 08.02.22.
+//  Created by Christoph Schog on 13.03.22.
 //
 
-import GRDBQuery
 import SwiftUI
+import GRDBQuery
 
 struct MemberView: View {
     
@@ -24,29 +24,26 @@ struct MemberView: View {
     @State private var newMemberIsPresented = false
     
     var body: some View {
-        
-        Text("Test")
-//        NavigationView {
-//            MemberList(memberInfos: memberInfos)
-//                .navigationBarTitle(Text("\(memberInfos.count) Member"), displayMode: .inline)
-//                .navigationBarItems(
-//                    leading: HStack {
-//                        leaveMemberViewButton
-//                    },
-//                    trailing: HStack {
-//                        EditButton()
-//                        newMemberButton
-//                    })
-//                .onChange(of: memberInfos) { members in
-//                    if members.isEmpty {
-//                        stopEditing()
-//                    }
-//                }
-//                .environment(\.editMode, $editMode)
-//        }
-//        .navigationViewStyle(.stack)
-//        .navigationBarHidden(true)
-    }
+        NavigationView {
+            MemberList(memberInfos: memberInfos)
+                .navigationBarTitle(Text("\(memberInfos.count) Member"), displayMode: .inline)
+                .navigationBarItems(
+                    leading: HStack {
+                        leaveMemberViewButton
+                    },
+                    trailing: HStack {
+                        EditButton()
+                        newMemberButton
+                    })
+                .onChange(of: memberInfos) { members in
+                    if members.isEmpty {
+                        stopEditing()
+                    }
+                }
+                .environment(\.editMode, $editMode)
+        }
+        .navigationViewStyle(.stack)
+        .navigationBarHidden(true)    }
     
     // The button that presents the member creation sheet.
     private var newMemberButton: some View {
@@ -61,7 +58,6 @@ struct MemberView: View {
             MemberCreationView()
         }
     }
-    
     // Button to leave the MemberView
     private var leaveMemberViewButton: some View {
         Button("Back") {
@@ -76,8 +72,8 @@ struct MemberView: View {
     }
 }
 
-//struct MitgliederView_Previews: PreviewProvider {
+//struct MemberView2_Previews: PreviewProvider {
 //    static var previews: some View {
-//        MemberView()
+//        MemberView2()
 //    }
 //}

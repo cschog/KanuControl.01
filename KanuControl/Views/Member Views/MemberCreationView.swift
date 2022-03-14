@@ -13,7 +13,7 @@ struct MemberCreationView: View {
     /// Write access to the database
     @Environment(\.appDatabase) private var appDatabase
     @Environment(\.dismiss) private var dismiss
-    @State private var form = MemberForm(name: "", firstName: "", clubID: 0)
+    @State private var form = MemberForm(name: "", firstName: "", clubID: 0, clubName: "")
     @State private var errorAlertIsPresented = false
     @State private var errorAlertTitle = ""
     
