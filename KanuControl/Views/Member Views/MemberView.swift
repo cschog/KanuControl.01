@@ -72,8 +72,9 @@ struct MemberView: View {
     }
 }
 
-//struct MemberView2_Previews: PreviewProvider {
+//struct MemberView_Previews: PreviewProvider {
+//    @Binding var isPresented: Bool
 //    static var previews: some View {
-//        MemberView2()
+//        MemberView()
 //    }
 //}

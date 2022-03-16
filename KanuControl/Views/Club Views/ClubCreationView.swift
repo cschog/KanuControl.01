@@ -13,7 +13,7 @@ struct ClubCreationView: View {
     /// Write access to the database
     @Environment(\.appDatabase) private var appDatabase
     @Environment(\.dismiss) private var dismiss
-    @State private var form = ClubForm(name: "", shortcut: "")
+    @State private var form = ClubForm(name: "", shortcut: "", street: "", zipCode: "", city: "", phone: "", iban: "", bic: "", bankName: "", accountHolder: "", accountHolderAdress: "")
     @State private var errorAlertIsPresented = false
     @State private var errorAlertTitle = ""
     
@@ -40,7 +40,7 @@ struct ClubCreationView: View {
     
     private func save() {
         do {
-            var club = Club(id: nil, name: "", shortcut: "")
+            var club = Club(id: nil, name: "", shortcut: "", street: "", zipCode: "", city: "", phone: "", iban: "", bic: "", bankName: "", accountHolder: "", accountHolderAdress: "")
             form.apply(to: &club)
             try appDatabase.saveClub(&club)
             dismiss()

@@ -10,7 +10,6 @@
 		83103F8D27B434FB008EF482 /* ClubsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83103F8C27B434FB008EF482 /* ClubsView.swift */; };
 		8330201027B6D8E600E5DE8A /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8330200F27B6D8E600E5DE8A /* Member.swift */; };
 		8330201627B6E5B800E5DE8A /* MemberEditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8330201527B6E5B800E5DE8A /* MemberEditionView.swift */; };
-		8331693D27C7E4C800D5C7EC /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331693C27C7E4C800D5C7EC /* Utility.swift */; };
 		8331693F27C7E5A600D5C7EC /* ClubsEditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331693E27C7E5A600D5C7EC /* ClubsEditionView.swift */; };
 		8358C8B727DB6198009ABA7A /* MemberInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358C8B627DB6198009ABA7A /* MemberInfoRequest.swift */; };
 		8376B1FD27D7D3D6009608A2 /* MemberInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8376B1FC27D7D3D6009608A2 /* MemberInfo.swift */; };
@@ -38,7 +37,6 @@
 		83103F8C27B434FB008EF482 /* ClubsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsView.swift; sourceTree = "<group>"; };
 		8330200F27B6D8E600E5DE8A /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		8330201527B6E5B800E5DE8A /* MemberEditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberEditionView.swift; sourceTree = "<group>"; };
-		8331693C27C7E4C800D5C7EC /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		8331693E27C7E5A600D5C7EC /* ClubsEditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsEditionView.swift; sourceTree = "<group>"; };
 		8358C8B627DB6198009ABA7A /* MemberInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfoRequest.swift; sourceTree = "<group>"; };
 		8376B1FC27D7D3D6009608A2 /* MemberInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberInfo.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 		8331693B27C7E48400D5C7EC /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				8331693C27C7E4C800D5C7EC /* Utility.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -247,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8386883827CFB6360045A4C4 /* ClubCreationView.swift in Sources */,
-				8331693D27C7E4C800D5C7EC /* Utility.swift in Sources */,
 				83DAA15B27C501BE00AB8524 /* Club.swift in Sources */,
 				8330201027B6D8E600E5DE8A /* Member.swift in Sources */,
 				83F58C5327D243E400727235 /* MemberRequest.swift in Sources */,

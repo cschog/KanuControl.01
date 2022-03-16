@@ -59,7 +59,7 @@ private struct ClubRow: View {
         HStack {
             Text(club.name)
             Spacer()
-            Text(club.shortcut ?? "")
+            Text(club.shortcut)
         }
     }
 }

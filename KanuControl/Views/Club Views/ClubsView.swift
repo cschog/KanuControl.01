@@ -74,8 +74,8 @@ struct ClubsView: View {
     }
 }
 
-//struct VereineView_Previews: PreviewProvider {
+//struct ClubsView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ClubsList()
+//        ClubsView()
 //    }
 //}

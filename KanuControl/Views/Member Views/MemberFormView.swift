@@ -63,7 +63,7 @@ struct ClubPickerItem {
 }
 
 extension Club {
-    static let emptySelection = Club(id: 0, name: "", shortcut: "")
+    static let emptySelection = Club(id: 0, name: "", shortcut: "", street: "", zipCode: "", city: "", phone: "", iban: "", bic: "", bankName: "", accountHolder: "", accountHolderAdress: "")
 }
 
 struct MemberForm {
@@ -90,10 +90,8 @@ extension MemberForm {
     }
 }
 
-//struct MemberFormView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MemberFormView(form: .constant(MemberForm(
-//            name: "",
-//            firstName: "")))
-//    }
-//}
+struct MemberFormView_Previews: PreviewProvider {
+    static var previews: some View {
+        MemberFormView(form: .constant(MemberForm(name: "", firstName: "", clubID: 0, clubName: "")))
+    }
+}

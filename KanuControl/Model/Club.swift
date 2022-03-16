@@ -13,7 +13,16 @@ struct Club: Identifiable, Equatable {
     
     var id: Int64?
     var name: String
-    var shortcut: String?
+    var shortcut: String
+    var street: String
+    var zipCode: String
+    var city: String
+    var phone: String
+    var iban: String
+    var bic: String
+    var bankName: String
+    var accountHolder: String
+    var accountHolderAdress: String
 }
 
 // MARK: - Persistence
@@ -25,6 +34,15 @@ extension Club: Codable, Hashable, FetchableRecord, MutablePersistableRecord {
         static let id = Column(CodingKeys.id)
         static let name = Column(CodingKeys.name)
         static let shortcut = Column(CodingKeys.shortcut)
+        static let street = Column(CodingKeys.street)
+        static let zipCode = Column(CodingKeys.zipCode)
+        static let city = Column(CodingKeys.city)
+        static let phone = Column(CodingKeys.phone)
+        static let iban = Column(CodingKeys.iban)
+        static let bic = Column(CodingKeys.bic)
+        static let bankName = Column(CodingKeys.bankName)
+        static let accountHolder = Column(CodingKeys.accountHolder)
+        static let accountHolderAdress = Column(CodingKeys.accountHolderAdress)
     }
     
     /// Updates a club id after it has been inserted in the database.

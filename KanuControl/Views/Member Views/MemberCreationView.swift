@@ -40,8 +40,8 @@ struct MemberCreationView: View {
     
     private func save() {
         do {
-            var memberInfo = MemberInfo(member: Member(id: nil, name: "", firstName: "", clubId: nil),
-                                        club: Club(id: nil, name: "", shortcut: ""))
+            var memberInfo = MemberInfo(member: Member(id: nil, name: "", firstName: "", birthday: "", sex: "", street: "", zipCode: "", city: "", phone: "", mobile: "", email: "", active: true, activeDate: "", bankName: "", iban: "", bic: "", clubId: 0),
+                                        club: Club(id: nil, name: "", shortcut: "", street: "", zipCode: "", city: "", phone: "", iban: "", bic: "", bankName: "", accountHolder: "", accountHolderAdress: ""))
             form.apply(to: &memberInfo)
             try appDatabase.saveMemberInfo(&memberInfo)
             dismiss()
